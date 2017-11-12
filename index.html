@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js Box shadow generator</title>
+   <link href="styles.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+     <h2>BOX SHADOW GENERATOR</h2>
+   <div id='box_styling'>
+     <div class="styles">
+  <label>Value X:</label><br>
+  <input type="range" min="-50" max="50" v-model="val_x"><br>
+  <label>Value Y:</label><br>
+  <input type="range" min="-50" max="50" v-model="val_y"><br>
+  <label>Blur:</label><br>
+  <input type="range" v-model="blur"><br>
+  <label>Spread</label><br>
+  <input type="range" v-model="spread"><br>
+   <label>Opacity:</label><br>
+  <input type="range" step="0.10" min="0" max="1" step="0.01" v-model="opacity"><br>
+  <br>
+  <label>Color picker:</label> <input type="color" v-model="color">
+ </div> 
+  <div id="box" v-bind:style="{ 'box-shadow': [val_x+'px '+ val_y+'px '+ blur+'px '+ spread+'px '+convert()] }">
+    <strong>Output CSS:</strong>
+ <p>-webkit-box-shadow: {{val_x}}px {{val_y}}px {{blur}}px {{spread}}px {{convert()}}<br>
+ -moz-box-shadow: {{val_x}}px {{val_y}}px {{blur}}px {{spread}}px {{convert()}}<br>
+box-shadow: {{val_x}}px {{val_y}}px {{blur}}px {{spread}}px {{convert()}}</p>
+  </div>
+</div>
+ <script src="app.js"></script>
+</body>
+</html>
